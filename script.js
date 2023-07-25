@@ -4,35 +4,68 @@ const emptyBox = document.getElementById("empty-box");
 
 let selectedColor = "#fff";
 
-const red = document.getElementById("red");
-const green = document.getElementById("green");
-const blue = document.getElementById("blue");
-const white = document.getElementById("white");
-const black = document.getElementById("black");
+colorsButtons = [];
+colorHexCodes = [
+    "#ff4500",
+    "#ffa800",
+    "#ffd635",
+    "#00a368",
+    "#7eed56",
+    "#2450a4",
+    "#3690ea",
+    "#51e9f4",
+    "#811e9f",
+    "#b44ac0",
+    "#ff99aa",
+    "#9c6926",
+    "#000",
+    "#898d90",
+    "#d4d7d9",
+    "#fff",
+]
 
-colorsButtons = [red, green, blue, black, white];
+CreateMatrix();
+CreateColorsButton();
+SelectBoxColor();
+ChangeBoxColor();
 
-for (let i = 0; i < 25; i++) {
-    const row = document.createElement("tr");
+function CreateColorsButton() {
 
-    for (let j = 0; j < 25; j++) {
-        const cell = document.createElement("td");
-        row.appendChild(cell);
-        //cell.style.backgroundColor="gray";
+    for (let i = 0; i < colorHexCodes.length; i++) {
+        const button = document.createElement("button");
+        button.style.backgroundColor = colorHexCodes[i];
+        button.className = "color-button";
+        colorsButtons[i] = button;
+        colors.appendChild(button);
     }
-    canva.appendChild(row);
 }
 
-const buttons = document.querySelectorAll('td');
-buttons.forEach(b => {
-    b.addEventListener('click', () =>
-        b.style.backgroundColor = selectedColor
-    );
-})
+function CreateMatrix() {
+    for (let i = 0; i < 25; i++) {
+        const row = document.createElement("tr");
 
+        for (let j = 0; j < 25; j++) {
+            const cell = document.createElement("td");
+            row.appendChild(cell);
+            //cell.style.backgroundColor="gray";
+        }
+        canva.appendChild(row);
+    }
+}
 
-colorsButtons.forEach(b => {
-    b.addEventListener('click', () => {
+function SelectBoxColor() {
+    const buttons = document.querySelectorAll('td');
+    buttons.forEach(b => {
+        b.addEventListener('click', () =>
+            b.style.backgroundColor = selectedColor
+        );
+    })
+}
+
+function ChangeBoxColor() {
+    colorsButtons.forEach(b => {
+        b.addEventListener('click', () => {
             selectedColor = b.style.backgroundColor;
-    });
-})
+        });
+    })
+}

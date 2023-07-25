@@ -27,8 +27,15 @@ header .logo>img {
     border-radius: 50px;
 }
 
-header .logo>h1 {
+header .logo>div>h1 {
     margin-left: 20px;
+}
+
+header a>h5{
+    color: #aaa;
+    margin-left: 20px;
+    margin-top: -20px;
+    text-decoration: none;
 }
 
 table {
@@ -42,7 +49,7 @@ table {
 td {
     width: 15px;
     height: 15px;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     text-align: center;
 }
 
