@@ -59,6 +59,12 @@ function SelectBoxColor() {
         b.addEventListener('click', () =>
             b.style.backgroundColor = selectedColor
         );
+        b.addEventListener('contextmenu', (e) =>
+        {
+            b.style.backgroundColor = "#fff";
+            e.preventDefault();
+        }
+    );
     })
 }
 
