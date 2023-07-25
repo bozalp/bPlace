@@ -1,2 +1,3 @@
 # bPlace
-A project inspired by R Place event
+A project inspired by R Place event. 
+WiP
