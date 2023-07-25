@@ -38,6 +38,11 @@ header a>h5{
     text-decoration: none;
 }
 
+.info{
+    text-align: center;
+    margin: 5px;
+}
+
 table {
 
     margin-top: 10px;
